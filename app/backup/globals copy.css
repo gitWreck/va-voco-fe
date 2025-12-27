@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* 🎨 Light Mode Colors */
+:root {
+  --background: #f9fafb; /* light gray background */
+  --foreground: #111827; /* dark readable text */
+  --primary: #1D4ED8;    /* green main brand */
+  --accent: #0f766e;     /* teal accent */
+  --muted: #4b5563;      /* soft gray text */
+  --card-bg: #ffffff;
+}
+
+/* 🌙 Dark Mode Colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary: #22c55e;
+    --accent: #14b8a6;
+    --muted: #9ca3af;
+    --card-bg: #171717;
+  }
+}
+
+/* Tailwind Inline Theme Setup */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-card: var(--card-bg);
+
+  --font-sans: var(--font-geist-sans, "Inter", "system-ui", sans-serif);
+  --font-mono: var(--font-geist-mono, monospace);
+}
+
+/* Base Body Styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
